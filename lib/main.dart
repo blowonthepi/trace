@@ -11,6 +11,7 @@ import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
 
 import 'auth.dart';
+import 'export.dart';
 
 void main() {
   runApp(MyApp());
@@ -113,6 +114,7 @@ class _MyHomePageState extends State<MyHomePage> {
           IconButton(
             icon: Icon(Icons.import_export),
             onPressed: exportData,
+            tooltip: "Export Data",
           ),
           IconButton(
             icon: Icon(Icons.info),
@@ -176,6 +178,12 @@ class _MyHomePageState extends State<MyHomePage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
+                  FlatButton.icon(
+                    onPressed: exportData,
+                    icon: Icon(Icons.import_export),
+                    label: Text("Export entries to CSV file")
+                  ),
+                  Divider(),
                   sheetButton("Sign out", () {
                     _auth.signOut();
                     userChecker();
@@ -241,7 +249,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   void exportData() {
-
+    ExportData().getData(user.uid);
   }
 
   Widget main() {
@@ -253,24 +261,10 @@ class _MyHomePageState extends State<MyHomePage> {
           // Catch empty data
           if(snapshot.data == null) return Center(child: CircularProgressIndicator());
           if(snapshot.data.documents.isEmpty) {
-            currentHome = 1;
-            return Center(
-              child: RichText(
-                text: TextSpan(
-                    text: "No contact entries made. Tap ",
-                    style: TextStyle(color: Colors.black),
-                    children: [
-                      WidgetSpan(
-                        alignment: PlaceholderAlignment.middle,
-                        child: Icon(Icons.add),
-                      ),
-                      TextSpan(
-                        text: " to begin.",
-                      )
-                    ]
-                ),
-              ),
-            );
+            setState(() {
+              currentHome = 1;
+            });
+            return showEmptyText();
           }
 
           // Contact Chip Filter
@@ -392,24 +386,10 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget buildUserList(BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
     if(snapshot.data == null) return Center(child: CircularProgressIndicator());
     if(snapshot.data.documents.isEmpty) {
-      currentHome = 1;
-      return Center(
-        child: RichText(
-          text: TextSpan(
-              text: "No contact entries made. Tap ",
-              style: TextStyle(color: Colors.black),
-              children: [
-                WidgetSpan(
-                  alignment: PlaceholderAlignment.middle,
-                  child: Icon(Icons.add),
-                ),
-                TextSpan(
-                  text: " to begin.",
-                )
-              ]
-          ),
-        ),
-      );
+      setState(() {
+        currentHome = 1;
+      });
+      return showEmptyText();
     }
 
     return ListView.builder(
@@ -445,296 +425,20 @@ class _MyHomePageState extends State<MyHomePage> {
         
         if(!searchQuery.contains("All")) {
           if(count > 0) {
-            return Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Card(
-                elevation: 8.0,
-                child: ListTile(
-                  title: Wrap(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: <Widget>[
-                            Wrap(children: names,),
-                            Row(
-                              children: [
-                                Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: Icon(Icons.date_range),
-                                ),
-                                Flexible(child: Text(encrypter.decrypt64(document['date'], iv: EncVals().iv))),
-                              ],
-                            ),
-                            Row(
-                              children: [
-                                Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: Icon(Icons.location_on),
-                                ),
-                                Flexible(child: Text(encrypter.decrypt64(document['location'], iv: EncVals().iv),)),
-                              ],
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                  trailing: IconButton(
-                    icon: Icon(Icons.delete, color: Colors.black,size: 30,),
-                    onPressed: () {
-                      showDialog(
-                          context: context,
-                          builder: (context) {
-                            return AlertDialog(
-                              title: Text("Are you sure?"),
-                              content: Column(
-                                mainAxisSize: MainAxisSize.min,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text("You are deleting:"),
-                                  Wrap(children: names,),
-                                  Row(
-                                    children: [
-                                      Padding(
-                                        padding: const EdgeInsets.all(8.0),
-                                        child: Icon(Icons.date_range),
-                                      ),
-                                      Text(encrypter.decrypt64(document['date'])),
-                                    ],
-                                  ),
-                                  Row(
-                                    children: [
-                                      Padding(
-                                        padding: const EdgeInsets.all(8.0),
-                                        child: Icon(Icons.location_on),
-                                      ),
-                                      Text(encrypter.decrypt64(document['location'])),
-                                    ],
-                                  ),
-                                ],
-                              ),
-                              actions: [
-                                FlatButton(
-                                  child: Text("Cancel"),
-                                  onPressed: () {
-                                    Navigator.of(context).pop();
-                                  },
-                                ),
-                                FlatButton(
-                                  child: Text("Yes, delete"),
-                                  onPressed: () {
-                                    document.reference.delete();
-                                    Navigator.of(context).pop();
-                                  },
-                                ),
-                              ],
-                            );
-                          }
-                      );
-                    },
-                  ),
-                ),
-              ),
-            );
+            return showEntries(document, names);
           } else {
             return Container();
           }
         } else {
           if(searchDate != null) {
-            String doc = encrypter.decrypt64(document['date']).toString().split("at")[0];
+            String doc = encrypter.decrypt64(document['date'], iv: EncVals().iv).toString().split("at")[0];
             if(searchDate == doc.trim()) {
-              return Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Card(
-                  elevation: 8.0,
-                  child: ListTile(
-                    title: Wrap(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: <Widget>[
-                              Wrap(children: names,),
-                              Row(
-                                children: [
-                                  Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: Icon(Icons.date_range),
-                                  ),
-                                  Flexible(child: Text(document['date'])),
-                                ],
-                              ),
-                              Row(
-                                children: [
-                                  Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: Icon(Icons.location_on),
-                                  ),
-                                  Flexible(child: Text(document['location'],)),
-                                ],
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                    trailing: IconButton(
-                      icon: Icon(Icons.delete, color: Colors.black,size: 30,),
-                      onPressed: () {
-                        showDialog(
-                            context: context,
-                            builder: (context) {
-                              return AlertDialog(
-                                title: Text("Are you sure?"),
-                                content: Column(
-                                  mainAxisSize: MainAxisSize.min,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text("You are deleting:"),
-                                    Wrap(children: names,),
-                                    Row(
-                                      children: [
-                                        Padding(
-                                          padding: const EdgeInsets.all(8.0),
-                                          child: Icon(Icons.date_range),
-                                        ),
-                                        Text(document['date']),
-                                      ],
-                                    ),
-                                    Row(
-                                      children: [
-                                        Padding(
-                                          padding: const EdgeInsets.all(8.0),
-                                          child: Icon(Icons.location_on),
-                                        ),
-                                        Text(document['location']),
-                                      ],
-                                    ),
-                                  ],
-                                ),
-                                actions: [
-                                  FlatButton(
-                                    child: Text("Cancel"),
-                                    onPressed: () {
-                                      Navigator.of(context).pop();
-                                    },
-                                  ),
-                                  FlatButton(
-                                    child: Text("Yes, delete"),
-                                    onPressed: () {
-                                      document.reference.delete();
-                                      Navigator.of(context).pop();
-                                    },
-                                  ),
-                                ],
-                              );
-                            }
-                        );
-                      },
-                    ),
-                  ),
-                ),
-              );
+              return showEntries(document, names);
             } else {
               return Container();
             }
           } else {
-            return Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Card(
-                elevation: 8.0,
-                child: ListTile(
-                  title: Wrap(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: <Widget>[
-                            Wrap(children: names,),
-                            Row(
-                              children: [
-                                Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: Icon(Icons.date_range),
-                                ),
-                                Flexible(child: Text(encrypter.decrypt64(document['date'], iv: EncVals().iv))),
-                              ],
-                            ),
-                            Row(
-                              children: [
-                                Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: Icon(Icons.location_on),
-                                ),
-                                Flexible(child: Text(encrypter.decrypt64(document['location'], iv: EncVals().iv),)),
-                              ],
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                  trailing: IconButton(
-                    icon: Icon(Icons.delete, color: Colors.black,size: 30,),
-                    onPressed: () {
-                      showDialog(
-                          context: context,
-                          builder: (context) {
-                            return AlertDialog(
-                              title: Text("Are you sure?"),
-                              content: Column(
-                                mainAxisSize: MainAxisSize.min,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text("You are deleting:"),
-                                  Wrap(children: names,),
-                                  Row(
-                                    children: [
-                                      Padding(
-                                        padding: const EdgeInsets.all(8.0),
-                                        child: Icon(Icons.date_range),
-                                      ),
-                                      Text(document['date']),
-                                    ],
-                                  ),
-                                  Row(
-                                    children: [
-                                      Padding(
-                                        padding: const EdgeInsets.all(8.0),
-                                        child: Icon(Icons.location_on),
-                                      ),
-                                      Text(document['location']),
-                                    ],
-                                  ),
-                                ],
-                              ),
-                              actions: [
-                                FlatButton(
-                                  child: Text("Cancel"),
-                                  onPressed: () {
-                                    Navigator.of(context).pop();
-                                  },
-                                ),
-                                FlatButton(
-                                  child: Text("Yes, delete"),
-                                  onPressed: () {
-                                    document.reference.delete();
-                                    Navigator.of(context).pop();
-                                  },
-                                ),
-                              ],
-                            );
-                          }
-                      );
-                    },
-                  ),
-                ),
-              ),
-            );
+            return showEntries(document, names);
           }
         }
       },
@@ -772,5 +476,125 @@ class _MyHomePageState extends State<MyHomePage> {
         'isEncrypted': true,
       });
     }
+  }
+
+  // Card States
+  showEntries(DocumentSnapshot document, List names) {
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Card(
+        elevation: 8.0,
+        child: ListTile(
+          title: Wrap(
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Wrap(children: names,),
+                    Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Icon(Icons.date_range),
+                        ),
+                        Flexible(child: Text(encrypter.decrypt64(document['date'], iv: EncVals().iv))),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Icon(Icons.location_on),
+                        ),
+                        Flexible(child: Text(encrypter.decrypt64(document['location'], iv: EncVals().iv),)),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+          trailing: IconButton(
+            icon: Icon(Icons.delete, color: Colors.black,size: 30,),
+            onPressed: () {
+              showDialog(
+                context: context,
+                builder: (context) {
+                  return AlertDialog(
+                    title: Text("Are you sure?"),
+                    content: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text("You are deleting:"),
+                        Wrap(children: names,),
+                        Row(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Icon(Icons.date_range),
+                            ),
+                            Expanded(child: Text(encrypter.decrypt64(document['date'], iv: EncVals().iv))),
+                          ],
+                        ),
+                        Row(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Icon(Icons.location_on),
+                            ),
+                            Expanded(child: Text(encrypter.decrypt64(document['location'], iv: EncVals().iv))),
+                          ],
+                        ),
+                      ],
+                    ),
+                    actions: [
+                      FlatButton(
+                        child: Text("Cancel"),
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                        },
+                      ),
+                      FlatButton(
+                        child: Text("Yes, delete"),
+                        onPressed: () {
+                          document.reference.delete();
+                          Navigator.of(context).pop();
+                        },
+                      ),
+                    ],
+                  );
+                }
+              );
+            },
+          ),
+        ),
+      ),
+    );
+  }
+
+  showEmptyText() {
+    return Padding(
+      padding: const EdgeInsets.all(16.0),
+      child: Center(
+        child: RichText(
+          text: TextSpan(
+              text: "No contact entries made. Tap ",
+              style: TextStyle(color: Colors.black),
+              children: [
+                WidgetSpan(
+                  alignment: PlaceholderAlignment.middle,
+                  child: Icon(Icons.add),
+                ),
+                TextSpan(
+                  text: " to begin.",
+                )
+              ]
+          ),
+        ),
+      ),
+    );
   }
 }

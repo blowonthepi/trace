@@ -104,14 +104,6 @@ androidx/versionedparcelable/NonParcelField.class
 androidx/versionedparcelable/ParcelField.class
 androidx/versionedparcelable/VersionedParcelize.class
 androidx/viewpager/widget/ViewPager$DecorView.class
-com/android/billingclient/api/BillingClient$BillingResponseCode.class
-com/android/billingclient/api/BillingClient$ChildDirected.class
-com/android/billingclient/api/BillingClient$FeatureType.class
-com/android/billingclient/api/BillingClient$SkuType.class
-com/android/billingclient/api/BillingClient$UnderAgeOfConsent.class
-com/android/billingclient/api/BillingClientImpl$ClientState.class
-com/android/billingclient/api/BillingFlowParams$ProrationMode.class
-com/android/billingclient/api/Purchase$PurchaseState.class
 com/google/android/gms/common/GoogleSignatureVerifier.class
 com/google/android/gms/common/SignInButton$ButtonSize.class
 com/google/android/gms/common/SignInButton$ColorScheme.class

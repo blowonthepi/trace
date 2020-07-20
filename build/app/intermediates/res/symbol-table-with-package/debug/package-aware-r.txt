@@ -1,4 +1,4 @@
-com.liamedwardsnz.covidtrace
+com.liamedwardsnz.trace
 attr alpha
 attr buttonSize
 attr circleCrop

@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/liam/FlutterProjects/covid_trace/covid_trace/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-es/values-es.xml",
+            "outputFile": "/Users/liam/FlutterProjects/trace/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-es/values-es.xml",
             "map": [
                 {
                     "source": "/Users/liam/.gradle/caches/transforms-2/files-2.1/3aaf6e5219b7f981ec263df919098c6f/core-1.1.0/res/values-es/values-es.xml",
@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "/Users/liam/.gradle/caches/transforms-2/files-2.1/cdf775527e8b480520db3757febc1a8f/jetified-play-services-basement-17.0.0/res/values-es/values.xml",
+                    "source": "/Users/liam/.gradle/caches/transforms-2/files-2.1/5b9576ecad7d2acebc256e48b6a0899b/jetified-play-services-basement-17.0.0/res/values-es/values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",

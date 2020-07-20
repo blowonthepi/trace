@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/liam/FlutterProjects/covid_trace/covid_trace/build/url_launcher/intermediates/res/merged/debug/values-is/values-is.xml",
+            "outputFile": "/Users/liam/FlutterProjects/trace/build/url_launcher/intermediates/res/merged/debug/values-is/values-is.xml",
             "map": [
                 {
                     "source": "/Users/liam/.gradle/caches/transforms-2/files-2.1/3aaf6e5219b7f981ec263df919098c6f/core-1.1.0/res/values-is/values-is.xml",
@@ -16,7 +16,7 @@
             ]
         },
         {
-            "outputFile": "/Users/liam/FlutterProjects/covid_trace/covid_trace/build/url_launcher/intermediates/incremental/mergeDebugResources/merged.dir/values-is/values-is.xml",
+            "outputFile": "/Users/liam/FlutterProjects/trace/build/url_launcher/intermediates/incremental/mergeDebugResources/merged.dir/values-is/values-is.xml",
             "map": [
                 {
                     "source": "/Users/liam/.gradle/caches/transforms-2/files-2.1/3aaf6e5219b7f981ec263df919098c6f/core-1.1.0/res/values-is/values-is.xml",

@@ -284,6 +284,12 @@
       "languageVersion": "2.0"
     },
     {
+      "name": "share_extend",
+      "rootUri": "file:///Users/liam/Documents/Development/flutterdev/flutter/.pub-cache/hosted/pub.dartlang.org/share_extend-1.1.9",
+      "packageUri": "lib/",
+      "languageVersion": "2.0"
+    },
+    {
       "name": "sky_engine",
       "rootUri": "file:///Users/liam/Documents/Development/flutterdev/flutter/bin/cache/pkg/sky_engine",
       "packageUri": "lib/",
@@ -398,7 +404,7 @@
       "languageVersion": "2.7"
     }
   ],
-  "generated": "2020-07-20T04:04:41.028921Z",
+  "generated": "2020-07-20T06:30:50.450117Z",
   "generator": "pub",
   "generatorVersion": "2.9.0-14.1.beta"
 }

@@ -1,2 +1,3 @@
 ### IGNORE ###
 build/ios/Debug-iphonesimulator/
+android/app/google-services.json

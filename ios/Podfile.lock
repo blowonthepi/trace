@@ -294,7 +294,15 @@ PODS:
     - nanopb/encode (= 0.3.9011)
   - nanopb/decode (0.3.9011)
   - nanopb/encode (0.3.9011)
+  - path_provider (0.0.1):
+    - Flutter
+  - path_provider_linux (0.0.1):
+    - Flutter
+  - path_provider_macos (0.0.1):
+    - Flutter
   - PromisesObjC (1.2.8)
+  - share_extend (0.0.1):
+    - Flutter
   - system_setting (0.1.1):
     - Flutter
   - url_launcher (0.0.1):
@@ -314,6 +322,10 @@ DEPENDENCIES:
   - firebase_core (from `.symlinks/plugins/firebase_core/ios`)
   - firebase_core_web (from `.symlinks/plugins/firebase_core_web/ios`)
   - Flutter (from `Flutter`)
+  - path_provider (from `.symlinks/plugins/path_provider/ios`)
+  - path_provider_linux (from `.symlinks/plugins/path_provider_linux/ios`)
+  - path_provider_macos (from `.symlinks/plugins/path_provider_macos/ios`)
+  - share_extend (from `.symlinks/plugins/share_extend/ios`)
   - system_setting (from `.symlinks/plugins/system_setting/ios`)
   - url_launcher (from `.symlinks/plugins/url_launcher/ios`)
   - url_launcher_linux (from `.symlinks/plugins/url_launcher_linux/ios`)
@@ -360,6 +372,14 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/firebase_core_web/ios"
   Flutter:
     :path: Flutter
+  path_provider:
+    :path: ".symlinks/plugins/path_provider/ios"
+  path_provider_linux:
+    :path: ".symlinks/plugins/path_provider_linux/ios"
+  path_provider_macos:
+    :path: ".symlinks/plugins/path_provider_macos/ios"
+  share_extend:
+    :path: ".symlinks/plugins/share_extend/ios"
   system_setting:
     :path: ".symlinks/plugins/system_setting/ios"
   url_launcher:
@@ -400,7 +420,11 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: cea130bbfe5a7edc8d06d3f0d17288c32ffe9925
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
   nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
+  path_provider: abfe2b5c733d04e238b0d8691db0cfd63a27a93c
+  path_provider_linux: 4d630dc393e1f20364f3e3b4a2ff41d9674a84e4
+  path_provider_macos: f760a3c5b04357c380e2fddb6f9db6f3015897e0
   PromisesObjC: c119f3cd559f50b7ae681fa59dc1acd19173b7e6
+  share_extend: b6748dc53695587891126a89533b862b92548c7b
   system_setting: 92cc591ade5113a6fd57ed0702dc5eaa9f5337e5
   url_launcher: 6fef411d543ceb26efce54b05a0a40bfd74cbbef
   url_launcher_linux: ac237cb7a8058736e4aae38bdbcc748a4b394cc0
