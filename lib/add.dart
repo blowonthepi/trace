@@ -1,8 +1,12 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:encrypt/encrypt.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:smart_select/smart_select.dart';
+
+import 'add_person.dart';
+import 'encrypt-values.dart';
 
 class Add extends StatefulWidget {
   Add({this.uid});
@@ -11,6 +15,8 @@ class Add extends StatefulWidget {
   @override
   _AddState createState() => _AddState(uid);
 }
+
+final encrypter = Encrypter(AES(EncVals().key));
 
 class _AddState extends State<Add> {
   _AddState(this.uid);
@@ -25,14 +31,18 @@ class _AddState extends State<Add> {
   List<SmartSelectOption<String>> people = new List();
   TextEditingController _location = new TextEditingController();
 
+
   getPeople() {
     Firestore.instance
         .collection("con-"+uid)
         .snapshots()
-        .listen((data) =>
-    data.documents.forEach((doc) {
-      people.add(SmartSelectOption<String>(value: doc.data['name'], title: doc.data['name']));
-    }));
+        .listen((data) {
+          people.clear();
+          data.documents.forEach((doc) {
+            String name = encrypter.decrypt64(doc.data['name'], iv: EncVals().iv);
+            people.add(SmartSelectOption<String>(value: name, title: name));
+          });
+        });
     setState(() {
       loading = false;
     });
@@ -76,6 +86,16 @@ class _AddState extends State<Add> {
                 value: names,
                 options: people,
                 onChange: (val) => setState(() => names = val),
+                modalConfig: SmartSelectModalConfig(
+                  leading: FlatButton.icon(
+                    icon: Icon(Icons.person_add),
+                    label: Text("Add Contacts"),
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                      Navigator.of(context).push(new MaterialPageRoute(builder: (context) => AddPerson()));
+                    },
+                  ),
+                ),
               ),
             ),
           ),
@@ -166,6 +186,10 @@ class _AddState extends State<Add> {
   }
 
   addRecord() async {
+    List<String> encNames = new List();
+    for(String name in names) {
+      encNames.add(encrypter.encrypt(name, iv: EncVals().iv).base64);
+    }
     FocusScopeNode currentFocus = FocusScope.of(context);
     if (!currentFocus.hasPrimaryFocus) {
       currentFocus.unfocus();
@@ -174,9 +198,10 @@ class _AddState extends State<Add> {
     await FirebaseAuth.instance.currentUser().then((value) {
       Firestore.instance.collection('trace-'+value.uid).document()
           .setData({
-        'names': names,
-        'date': mergedDateTime,
-        'location': _location.text,
+        'names': encNames,
+        'date': encrypter.encrypt(mergedDateTime, iv: EncVals().iv).base64,
+        'location': encrypter.encrypt(_location.text, iv: EncVals().iv).base64,
+        'isEncrypted': true,
       }).then((value) {
         Navigator.pop(context);
       }).catchError((e) {

@@ -1,11 +1,16 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:encrypt/encrypt.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+
+import 'encrypt-values.dart';
 
 class AddPerson extends StatefulWidget {
   @override
   _AddPersonState createState() => _AddPersonState();
 }
+
+final encrypter = Encrypter(AES(EncVals().key));
 
 class _AddPersonState extends State<AddPerson> {
   TimeOfDay picked;
@@ -103,7 +108,8 @@ class _AddPersonState extends State<AddPerson> {
     setState(() => loading = true);
     await FirebaseAuth.instance.currentUser().then((value) {
       Firestore.instance.collection('con-'+value.uid).document()
-          .setData({ 'name': name }).then((value) {
+          .setData({ 'name': encrypter.encrypt(name, iv: EncVals().iv).base64, 'isEncrypted': true })
+          .then((value) {
             Navigator.pop(context);
       }).catchError((e) {
         setState(() => loading = false);

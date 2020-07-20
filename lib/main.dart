@@ -111,6 +111,10 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(home ? "Trace" : "People"),
         actions: [
           IconButton(
+            icon: Icon(Icons.import_export),
+            onPressed: exportData,
+          ),
+          IconButton(
             icon: Icon(Icons.info),
             onPressed: showSettingsDialog,
           ),
@@ -236,24 +240,55 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
+  void exportData() {
+
+  }
+
   Widget main() {
     if(home) {
       return loading ? Center(child: CircularProgressIndicator(),) :
       userLoggedIn == false ? Center(child: CircularProgressIndicator(),) : StreamBuilder(
         stream: Firestore.instance.collection('con-'+user.uid).orderBy("name", descending: false).snapshots(),
         builder: (context, snapshot) {
+          // Catch empty data
           if(snapshot.data == null) return Center(child: CircularProgressIndicator());
           if(snapshot.data.documents.isEmpty) {
-            return Container();
+            currentHome = 1;
+            return Center(
+              child: RichText(
+                text: TextSpan(
+                    text: "No contact entries made. Tap ",
+                    style: TextStyle(color: Colors.black),
+                    children: [
+                      WidgetSpan(
+                        alignment: PlaceholderAlignment.middle,
+                        child: Icon(Icons.add),
+                      ),
+                      TextSpan(
+                        text: " to begin.",
+                      )
+                    ]
+                ),
+              ),
+            );
           }
 
+          // Contact Chip Filter
           List<String> contacts = new List();
           contacts.add("All");
           for(int i = 0; i < snapshot.data.documents.length; i++) {
             DocumentSnapshot document = snapshot.data.documents[i];
-            contacts.add(document['name']);
+            if(document['isEncrypted'] == null) { // Back-encrypt old contact data
+              reconfigureEncryption(document, false); // Encryption Maker, false = contact
+            }
+            try {
+              contacts.add(encrypter.decrypt64(document['name'], iv: EncVals().iv));
+            } catch (FormatException) {
+
+            }
           }
 
+          // Scrolling chip view
           return Column(
             children: [
               SizedBox(
@@ -293,6 +328,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   }
                 ),
               ),
+              // Show/hide date search feature
               searchQuery.contains("All") ? Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -338,7 +374,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ) : Container(),
                 ],
               ) : Container(),
-              Expanded(
+              Expanded( // main area
                 child: StreamBuilder(
                   stream: Firestore.instance.collection("trace-"+user.uid).orderBy("date", descending: true).snapshots(),
                   builder: buildUserList,
@@ -386,7 +422,7 @@ class _MyHomePageState extends State<MyHomePage> {
         int count = 0;
 
         if(document['isEncrypted'] == null) {
-          reconfigureEncryption(document); // Encryption Maker
+          reconfigureEncryption(document, true); // Encryption Maker
         }
 
         for(String eName in document['names']) {
@@ -715,18 +751,26 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
-  reconfigureEncryption(DocumentSnapshot document) {
-    List<String> names = new List();
-    for(String name in document['names']) {
-      names.add(encrypter.encrypt(name, iv: EncVals().iv).base64);
-    }
+  reconfigureEncryption(DocumentSnapshot document, bool isEntry) {
+    if(isEntry) {
+      List<String> names = new List();
+      for(String name in document['names']) {
+        names.add(encrypter.encrypt(name, iv: EncVals().iv).base64);
+      }
 
-    Firestore.instance.collection("trace-"+user.uid).document(document.documentID)
-        .updateData({
-      'names': names,
-      'date': encrypter.encrypt(document['date'], iv: EncVals().iv).base64,
-      'location': encrypter.encrypt(document['location'], iv: EncVals().iv).base64,
-      'isEncrypted': true,
-    });
+      Firestore.instance.collection("trace-"+user.uid).document(document.documentID)
+          .updateData({
+        'names': names,
+        'date': encrypter.encrypt(document['date'], iv: EncVals().iv).base64,
+        'location': encrypter.encrypt(document['location'], iv: EncVals().iv).base64,
+        'isEncrypted': true,
+      });
+    } else {
+      Firestore.instance.collection("con-"+user.uid).document(document.documentID)
+          .updateData({
+        'name': encrypter.encrypt(document['name'], iv: EncVals().iv).base64,
+        'isEncrypted': true,
+      });
+    }
   }
 }

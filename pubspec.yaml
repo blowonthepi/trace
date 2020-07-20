@@ -30,6 +30,8 @@ dependencies:
   url_launcher: ^5.4.7
   system_setting: any
   encrypt: ^4.0.2
+  path_provider: ^1.6.11
+  csv: ^4.0.3
 
 dev_dependencies:
   flutter_test:

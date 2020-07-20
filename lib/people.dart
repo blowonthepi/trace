@@ -1,4 +1,6 @@
+import 'package:Trace/encrypt-values.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:encrypt/encrypt.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -6,6 +8,8 @@ class People extends StatefulWidget {
   @override
   _PeopleState createState() => _PeopleState();
 }
+
+final encrypter = Encrypter(AES(EncVals().key));
 
 class _PeopleState extends State<People> {
   FirebaseUser user;
@@ -56,16 +60,17 @@ class _PeopleState extends State<People> {
         return new ListView(
           keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
           children: snapshot.data.documents.map((DocumentSnapshot document) {
+            String name = encrypter.decrypt64(document['name'], iv: EncVals().iv);
             return Column(
               children: [
                 new ListTile(
                   leading: CircleAvatar(
                     backgroundColor: Colors.orangeAccent,
-                    child: Text(document['name'][0], style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black),),
+                    child: Text(name[0], style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black),),
                   ),
                   title: Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: Text(document['name']),
+                    child: Text(name),
                   ),
                   trailing: IconButton(
                     icon: Icon(Icons.delete, color: Theme.of(context).accentColor,),
