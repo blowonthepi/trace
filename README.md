@@ -9,7 +9,8 @@ It has most recently been updated to reflect my newest workflow.
 
 ## Screenshots
 
-![](https://github.com/blowonthepi/trace/blob/master/slice2.png | width=90)
-![](https://github.com/blowonthepi/trace/blob/master/slice3.png | width=90)
-![](https://github.com/blowonthepi/trace/blob/master/slice4.png | width=90)
-![](https://github.com/blowonthepi/trace/blob/master/slice5.png | width=90)
+<img src="https://github.com/blowonthepi/trace/blob/master/slice2.png" width="90">
+<img src="https://github.com/blowonthepi/trace/blob/master/slice3.png" width="90">
+<img src="https://github.com/blowonthepi/trace/blob/master/slice4.png" width="90">
+<img src="https://github.com/blowonthepi/trace/blob/master/slice5.png" width="90">
+
