@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/liam/FlutterProjects/trace/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml",
+            "outputFile": "/Users/liam/FlutterProjects/TRACE_RELATED/trace/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml",
             "map": [
                 {
                     "source": "/Users/liam/.gradle/caches/transforms-2/files-2.1/3aaf6e5219b7f981ec263df919098c6f/core-1.1.0/res/values/values.xml",
@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "/Users/liam/FlutterProjects/trace/build/app/generated/res/google-services/debug/values/values.xml",
+                    "source": "/Users/liam/FlutterProjects/TRACE_RELATED/trace/build/app/generated/res/google-services/debug/values/values.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",
@@ -40,24 +40,7 @@
                     }
                 },
                 {
-                    "source": "/Users/liam/.gradle/caches/transforms-2/files-2.1/5b9576ecad7d2acebc256e48b6a0899b/jetified-play-services-basement-17.0.0/res/values/values.xml",
-                    "from": {
-                        "startLines": "4,7",
-                        "startColumns": "0,0",
-                        "startOffsets": "238,401",
-                        "endColumns": "63,166",
-                        "endOffsets": "301,567"
-                    },
-                    "to": {
-                        "startLines": "84,94",
-                        "startColumns": "4,4",
-                        "startOffsets": "5259,6437",
-                        "endColumns": "67,166",
-                        "endOffsets": "5322,6599"
-                    }
-                },
-                {
-                    "source": "/Users/liam/FlutterProjects/trace/android/app/src/main/res/values/styles.xml",
+                    "source": "/Users/liam/FlutterProjects/TRACE_RELATED/trace/android/app/src/main/res/values/styles.xml",
                     "from": {
                         "startLines": "3,14",
                         "startColumns": "4,4",
@@ -73,6 +56,23 @@
                         "endLines": "117,120",
                         "endColumns": "12,12",
                         "endOffsets": "8931,9096"
+                    }
+                },
+                {
+                    "source": "/Users/liam/.gradle/caches/transforms-2/files-2.1/694ac055b0cc1fbe221db1ad5f364606/jetified-play-services-basement-17.0.0/res/values/values.xml",
+                    "from": {
+                        "startLines": "4,7",
+                        "startColumns": "0,0",
+                        "startOffsets": "238,401",
+                        "endColumns": "63,166",
+                        "endOffsets": "301,567"
+                    },
+                    "to": {
+                        "startLines": "84,94",
+                        "startColumns": "4,4",
+                        "startOffsets": "5259,6437",
+                        "endColumns": "67,166",
+                        "endOffsets": "5322,6599"
                     }
                 },
                 {

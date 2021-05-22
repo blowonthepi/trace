@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/liam/FlutterProjects/trace/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-ka/values-ka.xml",
+            "outputFile": "/Users/liam/FlutterProjects/TRACE_RELATED/trace/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-ka/values-ka.xml",
             "map": [
                 {
-                    "source": "/Users/liam/.gradle/caches/transforms-2/files-2.1/5b9576ecad7d2acebc256e48b6a0899b/jetified-play-services-basement-17.0.0/res/values-ka/values.xml",
+                    "source": "/Users/liam/.gradle/caches/transforms-2/files-2.1/694ac055b0cc1fbe221db1ad5f364606/jetified-play-services-basement-17.0.0/res/values-ka/values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",

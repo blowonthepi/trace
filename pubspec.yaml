@@ -1,5 +1,5 @@
 name: Trace
-description: Trace is for NZ to manually record their contacts during Level 2.
+description: Trace is for NZers to manually record their contacts during Level 2.
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `pub publish`. This is preferred for private packages.
@@ -23,10 +23,10 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  cloud_firestore: ^0.13.6
-  firebase_auth: ^0.16.1
+  cloud_firestore: ^2.2.0
+  firebase_auth: ^1.2.0
   smart_select: ^3.0.3
-  intl: ^0.16.1
+  intl: ^0.17.0
   url_launcher: ^5.4.7
   system_setting: any
   encrypt: ^4.0.2

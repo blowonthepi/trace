@@ -12,8 +12,8 @@
 12         to allow setting breakpoints, to provide hot reload, etc.
 13    -->
 14    <uses-permission android:name="android.permission.INTERNET" />
-14-->/Users/liam/FlutterProjects/trace/android/app/src/debug/AndroidManifest.xml:6:5-66
-14-->/Users/liam/FlutterProjects/trace/android/app/src/debug/AndroidManifest.xml:6:22-64
+14-->/Users/liam/FlutterProjects/TRACE_RELATED/trace/android/app/src/debug/AndroidManifest.xml:6:5-66
+14-->/Users/liam/FlutterProjects/TRACE_RELATED/trace/android/app/src/debug/AndroidManifest.xml:6:22-64
 15    <!--
 16     io.flutter.app.FlutterApplication is an android.app.Application that
 17         calls FlutterMain.startInitialization(this); in its onCreate method.
@@ -22,41 +22,41 @@
 20         FlutterApplication and put your custom class here.
 21    -->
 22    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-22-->/Users/liam/FlutterProjects/trace/android/app/src/main/AndroidManifest.xml:9:5-79
-22-->/Users/liam/FlutterProjects/trace/android/app/src/main/AndroidManifest.xml:9:22-77
+22-->/Users/liam/FlutterProjects/TRACE_RELATED/trace/android/app/src/main/AndroidManifest.xml:9:5-79
+22-->/Users/liam/FlutterProjects/TRACE_RELATED/trace/android/app/src/main/AndroidManifest.xml:9:22-77
 23    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> <!-- Although the *SdkVersion is captured in gradle build files, this is required for non gradle builds -->
-23-->/Users/liam/FlutterProjects/trace/android/app/src/main/AndroidManifest.xml:10:5-80
-23-->/Users/liam/FlutterProjects/trace/android/app/src/main/AndroidManifest.xml:10:22-78
+23-->/Users/liam/FlutterProjects/TRACE_RELATED/trace/android/app/src/main/AndroidManifest.xml:10:5-80
+23-->/Users/liam/FlutterProjects/TRACE_RELATED/trace/android/app/src/main/AndroidManifest.xml:10:22-78
 24    <!-- <uses-sdk android:minSdkVersion="14" /> -->
 25    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-25-->[com.google.firebase:firebase-firestore:21.3.0] /Users/liam/.gradle/caches/transforms-2/files-2.1/c8af82e65ecbbf701f21b7a2da3f418d/jetified-firebase-firestore-21.3.0/AndroidManifest.xml:13:5-79
-25-->[com.google.firebase:firebase-firestore:21.3.0] /Users/liam/.gradle/caches/transforms-2/files-2.1/c8af82e65ecbbf701f21b7a2da3f418d/jetified-firebase-firestore-21.3.0/AndroidManifest.xml:13:22-76
+25-->[com.google.firebase:firebase-firestore:21.3.0] /Users/liam/.gradle/caches/transforms-2/files-2.1/f95834b738a264718a83a5d1adc44c6a/jetified-firebase-firestore-21.3.0/AndroidManifest.xml:13:5-79
+25-->[com.google.firebase:firebase-firestore:21.3.0] /Users/liam/.gradle/caches/transforms-2/files-2.1/f95834b738a264718a83a5d1adc44c6a/jetified-firebase-firestore-21.3.0/AndroidManifest.xml:13:22-76
 26
 27    <application
-27-->/Users/liam/FlutterProjects/trace/android/app/src/main/AndroidManifest.xml:12:5-50:19
+27-->/Users/liam/FlutterProjects/TRACE_RELATED/trace/android/app/src/main/AndroidManifest.xml:12:5-50:19
 28        android:name="io.flutter.app.FlutterApplication"
-28-->/Users/liam/FlutterProjects/trace/android/app/src/main/AndroidManifest.xml:13:9-57
+28-->/Users/liam/FlutterProjects/TRACE_RELATED/trace/android/app/src/main/AndroidManifest.xml:13:9-57
 29        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
 29-->[androidx.core:core:1.1.0] /Users/liam/.gradle/caches/transforms-2/files-2.1/3aaf6e5219b7f981ec263df919098c6f/core-1.1.0/AndroidManifest.xml:24:18-86
 30        android:debuggable="true"
 31        android:icon="@mipmap/ic_launcher"
-31-->/Users/liam/FlutterProjects/trace/android/app/src/main/AndroidManifest.xml:15:9-43
+31-->/Users/liam/FlutterProjects/TRACE_RELATED/trace/android/app/src/main/AndroidManifest.xml:15:9-43
 32        android:label="Trace" >
-32-->/Users/liam/FlutterProjects/trace/android/app/src/main/AndroidManifest.xml:14:9-30
+32-->/Users/liam/FlutterProjects/TRACE_RELATED/trace/android/app/src/main/AndroidManifest.xml:14:9-30
 33        <activity
-33-->/Users/liam/FlutterProjects/trace/android/app/src/main/AndroidManifest.xml:16:9-44:20
+33-->/Users/liam/FlutterProjects/TRACE_RELATED/trace/android/app/src/main/AndroidManifest.xml:16:9-44:20
 34            android:name="com.liamedwardsnz.trace.MainActivity"
-34-->/Users/liam/FlutterProjects/trace/android/app/src/main/AndroidManifest.xml:17:13-41
+34-->/Users/liam/FlutterProjects/TRACE_RELATED/trace/android/app/src/main/AndroidManifest.xml:17:13-41
 35            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
-35-->/Users/liam/FlutterProjects/trace/android/app/src/main/AndroidManifest.xml:20:13-163
+35-->/Users/liam/FlutterProjects/TRACE_RELATED/trace/android/app/src/main/AndroidManifest.xml:20:13-163
 36            android:hardwareAccelerated="true"
-36-->/Users/liam/FlutterProjects/trace/android/app/src/main/AndroidManifest.xml:21:13-47
+36-->/Users/liam/FlutterProjects/TRACE_RELATED/trace/android/app/src/main/AndroidManifest.xml:21:13-47
 37            android:launchMode="singleTop"
-37-->/Users/liam/FlutterProjects/trace/android/app/src/main/AndroidManifest.xml:18:13-43
+37-->/Users/liam/FlutterProjects/TRACE_RELATED/trace/android/app/src/main/AndroidManifest.xml:18:13-43
 38            android:theme="@style/LaunchTheme"
-38-->/Users/liam/FlutterProjects/trace/android/app/src/main/AndroidManifest.xml:19:13-47
+38-->/Users/liam/FlutterProjects/TRACE_RELATED/trace/android/app/src/main/AndroidManifest.xml:19:13-47
 39            android:windowSoftInputMode="adjustResize" >
-39-->/Users/liam/FlutterProjects/trace/android/app/src/main/AndroidManifest.xml:22:13-55
+39-->/Users/liam/FlutterProjects/TRACE_RELATED/trace/android/app/src/main/AndroidManifest.xml:22:13-55
 40
 41            <!--
 42                 Specifies an Android theme to apply to this Activity as soon as
@@ -65,11 +65,11 @@
 45                 to determine the Window background behind the Flutter UI.
 46            -->
 47            <meta-data
-47-->/Users/liam/FlutterProjects/trace/android/app/src/main/AndroidManifest.xml:27:13-30:17
+47-->/Users/liam/FlutterProjects/TRACE_RELATED/trace/android/app/src/main/AndroidManifest.xml:27:13-30:17
 48                android:name="io.flutter.embedding.android.NormalTheme"
-48-->/Users/liam/FlutterProjects/trace/android/app/src/main/AndroidManifest.xml:28:15-70
+48-->/Users/liam/FlutterProjects/TRACE_RELATED/trace/android/app/src/main/AndroidManifest.xml:28:15-70
 49                android:resource="@style/NormalTheme" />
-49-->/Users/liam/FlutterProjects/trace/android/app/src/main/AndroidManifest.xml:29:15-52
+49-->/Users/liam/FlutterProjects/TRACE_RELATED/trace/android/app/src/main/AndroidManifest.xml:29:15-52
 50            <!--
 51                 Displays an Android View that continues showing the launch screen
 52                 Drawable until Flutter paints its first frame, then this splash
@@ -78,21 +78,21 @@
 55                 Flutter's first frame.
 56            -->
 57            <meta-data
-57-->/Users/liam/FlutterProjects/trace/android/app/src/main/AndroidManifest.xml:36:13-39:17
+57-->/Users/liam/FlutterProjects/TRACE_RELATED/trace/android/app/src/main/AndroidManifest.xml:36:13-39:17
 58                android:name="io.flutter.embedding.android.SplashScreenDrawable"
-58-->/Users/liam/FlutterProjects/trace/android/app/src/main/AndroidManifest.xml:37:15-79
+58-->/Users/liam/FlutterProjects/TRACE_RELATED/trace/android/app/src/main/AndroidManifest.xml:37:15-79
 59                android:resource="@drawable/launch_background" />
-59-->/Users/liam/FlutterProjects/trace/android/app/src/main/AndroidManifest.xml:38:15-61
+59-->/Users/liam/FlutterProjects/TRACE_RELATED/trace/android/app/src/main/AndroidManifest.xml:38:15-61
 60
 61            <intent-filter>
-61-->/Users/liam/FlutterProjects/trace/android/app/src/main/AndroidManifest.xml:40:13-43:29
+61-->/Users/liam/FlutterProjects/TRACE_RELATED/trace/android/app/src/main/AndroidManifest.xml:40:13-43:29
 62                <action android:name="android.intent.action.MAIN" />
-62-->/Users/liam/FlutterProjects/trace/android/app/src/main/AndroidManifest.xml:41:17-68
-62-->/Users/liam/FlutterProjects/trace/android/app/src/main/AndroidManifest.xml:41:25-66
+62-->/Users/liam/FlutterProjects/TRACE_RELATED/trace/android/app/src/main/AndroidManifest.xml:41:17-68
+62-->/Users/liam/FlutterProjects/TRACE_RELATED/trace/android/app/src/main/AndroidManifest.xml:41:25-66
 63
 64                <category android:name="android.intent.category.LAUNCHER" />
-64-->/Users/liam/FlutterProjects/trace/android/app/src/main/AndroidManifest.xml:42:17-76
-64-->/Users/liam/FlutterProjects/trace/android/app/src/main/AndroidManifest.xml:42:27-74
+64-->/Users/liam/FlutterProjects/TRACE_RELATED/trace/android/app/src/main/AndroidManifest.xml:42:17-76
+64-->/Users/liam/FlutterProjects/TRACE_RELATED/trace/android/app/src/main/AndroidManifest.xml:42:27-74
 65            </intent-filter>
 66        </activity>
 67        <!--
@@ -100,71 +100,71 @@
 69             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
 70        -->
 71        <meta-data
-71-->/Users/liam/FlutterProjects/trace/android/app/src/main/AndroidManifest.xml:47:9-49:33
+71-->/Users/liam/FlutterProjects/TRACE_RELATED/trace/android/app/src/main/AndroidManifest.xml:47:9-49:33
 72            android:name="flutterEmbedding"
-72-->/Users/liam/FlutterProjects/trace/android/app/src/main/AndroidManifest.xml:48:13-44
+72-->/Users/liam/FlutterProjects/TRACE_RELATED/trace/android/app/src/main/AndroidManifest.xml:48:13-44
 73            android:value="2" />
-73-->/Users/liam/FlutterProjects/trace/android/app/src/main/AndroidManifest.xml:49:13-30
+73-->/Users/liam/FlutterProjects/TRACE_RELATED/trace/android/app/src/main/AndroidManifest.xml:49:13-30
 74
-75        <activity
-75-->[:url_launcher] /Users/liam/FlutterProjects/trace/build/url_launcher/intermediates/library_manifest/debug/AndroidManifest.xml:8:9-11:74
-76            android:name="io.flutter.plugins.urllauncher.WebViewActivity"
-76-->[:url_launcher] /Users/liam/FlutterProjects/trace/build/url_launcher/intermediates/library_manifest/debug/AndroidManifest.xml:9:13-74
-77            android:exported="false"
-77-->[:url_launcher] /Users/liam/FlutterProjects/trace/build/url_launcher/intermediates/library_manifest/debug/AndroidManifest.xml:10:13-37
-78            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
-78-->[:url_launcher] /Users/liam/FlutterProjects/trace/build/url_launcher/intermediates/library_manifest/debug/AndroidManifest.xml:11:13-71
-79
-80        <service
-80-->[:cloud_firestore] /Users/liam/FlutterProjects/trace/build/cloud_firestore/intermediates/library_manifest/debug/AndroidManifest.xml:8:9-12:19
-81            android:name="com.google.firebase.components.ComponentDiscoveryService"
-81-->[:cloud_firestore] /Users/liam/FlutterProjects/trace/build/cloud_firestore/intermediates/library_manifest/debug/AndroidManifest.xml:8:18-89
-82            android:directBootAware="true"
-82-->[com.google.firebase:firebase-common:19.3.0] /Users/liam/.gradle/caches/transforms-2/files-2.1/ae58aa27d29b30f7dfa3c7ad61b046e7/jetified-firebase-common-19.3.0/AndroidManifest.xml:34:13-43
-83            android:exported="false" >
-83-->[com.google.firebase:firebase-auth:19.2.0] /Users/liam/.gradle/caches/transforms-2/files-2.1/a83bb62cb43b672cf00b874e0ee6110c/firebase-auth-19.2.0/AndroidManifest.xml:35:13-37
-84            <meta-data
-84-->[:cloud_firestore] /Users/liam/FlutterProjects/trace/build/cloud_firestore/intermediates/library_manifest/debug/AndroidManifest.xml:9:13-11:85
-85                android:name="com.google.firebase.components:io.flutter.plugins.firebase.cloudfirestore.FlutterFirebaseAppRegistrar"
-85-->[:cloud_firestore] /Users/liam/FlutterProjects/trace/build/cloud_firestore/intermediates/library_manifest/debug/AndroidManifest.xml:10:17-133
-86                android:value="com.google.firebase.components.ComponentRegistrar" />
-86-->[:cloud_firestore] /Users/liam/FlutterProjects/trace/build/cloud_firestore/intermediates/library_manifest/debug/AndroidManifest.xml:11:17-82
-87            <meta-data
-87-->[:firebase_auth] /Users/liam/FlutterProjects/trace/build/firebase_auth/intermediates/library_manifest/debug/AndroidManifest.xml:9:13-11:85
-88                android:name="com.google.firebase.components:io.flutter.plugins.firebaseauth.FlutterFirebaseAppRegistrar"
-88-->[:firebase_auth] /Users/liam/FlutterProjects/trace/build/firebase_auth/intermediates/library_manifest/debug/AndroidManifest.xml:10:17-122
-89                android:value="com.google.firebase.components.ComponentRegistrar" />
-89-->[:firebase_auth] /Users/liam/FlutterProjects/trace/build/firebase_auth/intermediates/library_manifest/debug/AndroidManifest.xml:11:17-82
-90            <meta-data
-90-->[:firebase_core] /Users/liam/FlutterProjects/trace/build/firebase_core/intermediates/library_manifest/debug/AndroidManifest.xml:9:13-11:85
-91                android:name="com.google.firebase.components:io.flutter.plugins.firebase.core.FlutterFirebaseAppRegistrar"
-91-->[:firebase_core] /Users/liam/FlutterProjects/trace/build/firebase_core/intermediates/library_manifest/debug/AndroidManifest.xml:10:17-123
-92                android:value="com.google.firebase.components.ComponentRegistrar" />
-92-->[:firebase_core] /Users/liam/FlutterProjects/trace/build/firebase_core/intermediates/library_manifest/debug/AndroidManifest.xml:11:17-82
-93            <meta-data
-93-->[com.google.firebase:firebase-auth:19.2.0] /Users/liam/.gradle/caches/transforms-2/files-2.1/a83bb62cb43b672cf00b874e0ee6110c/firebase-auth-19.2.0/AndroidManifest.xml:36:13-38:85
-94                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
-94-->[com.google.firebase:firebase-auth:19.2.0] /Users/liam/.gradle/caches/transforms-2/files-2.1/a83bb62cb43b672cf00b874e0ee6110c/firebase-auth-19.2.0/AndroidManifest.xml:37:17-109
-95                android:value="com.google.firebase.components.ComponentRegistrar" />
-95-->[com.google.firebase:firebase-auth:19.2.0] /Users/liam/.gradle/caches/transforms-2/files-2.1/a83bb62cb43b672cf00b874e0ee6110c/firebase-auth-19.2.0/AndroidManifest.xml:38:17-82
-96            <meta-data
-96-->[com.google.firebase:firebase-firestore:21.3.0] /Users/liam/.gradle/caches/transforms-2/files-2.1/c8af82e65ecbbf701f21b7a2da3f418d/jetified-firebase-firestore-21.3.0/AndroidManifest.xml:20:13-22:85
-97                android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"
-97-->[com.google.firebase:firebase-firestore:21.3.0] /Users/liam/.gradle/caches/transforms-2/files-2.1/c8af82e65ecbbf701f21b7a2da3f418d/jetified-firebase-firestore-21.3.0/AndroidManifest.xml:21:17-111
-98                android:value="com.google.firebase.components.ComponentRegistrar" />
-98-->[com.google.firebase:firebase-firestore:21.3.0] /Users/liam/.gradle/caches/transforms-2/files-2.1/c8af82e65ecbbf701f21b7a2da3f418d/jetified-firebase-firestore-21.3.0/AndroidManifest.xml:22:17-82
-99        </service>
+75        <service
+75-->[:firebase_auth] /Users/liam/FlutterProjects/TRACE_RELATED/trace/build/firebase_auth/intermediates/library_manifest/debug/AndroidManifest.xml:8:9-12:19
+76            android:name="com.google.firebase.components.ComponentDiscoveryService"
+76-->[:firebase_auth] /Users/liam/FlutterProjects/TRACE_RELATED/trace/build/firebase_auth/intermediates/library_manifest/debug/AndroidManifest.xml:8:18-89
+77            android:directBootAware="true"
+77-->[com.google.firebase:firebase-common:19.3.0] /Users/liam/.gradle/caches/transforms-2/files-2.1/74c3dc8d4b970ee3063d023e0dc29eb3/jetified-firebase-common-19.3.0/AndroidManifest.xml:34:13-43
+78            android:exported="false" >
+78-->[com.google.firebase:firebase-auth:19.2.0] /Users/liam/.gradle/caches/transforms-2/files-2.1/a83bb62cb43b672cf00b874e0ee6110c/firebase-auth-19.2.0/AndroidManifest.xml:35:13-37
+79            <meta-data
+79-->[:firebase_auth] /Users/liam/FlutterProjects/TRACE_RELATED/trace/build/firebase_auth/intermediates/library_manifest/debug/AndroidManifest.xml:9:13-11:85
+80                android:name="com.google.firebase.components:io.flutter.plugins.firebaseauth.FlutterFirebaseAppRegistrar"
+80-->[:firebase_auth] /Users/liam/FlutterProjects/TRACE_RELATED/trace/build/firebase_auth/intermediates/library_manifest/debug/AndroidManifest.xml:10:17-122
+81                android:value="com.google.firebase.components.ComponentRegistrar" />
+81-->[:firebase_auth] /Users/liam/FlutterProjects/TRACE_RELATED/trace/build/firebase_auth/intermediates/library_manifest/debug/AndroidManifest.xml:11:17-82
+82            <meta-data
+82-->[:cloud_firestore] /Users/liam/FlutterProjects/TRACE_RELATED/trace/build/cloud_firestore/intermediates/library_manifest/debug/AndroidManifest.xml:9:13-11:85
+83                android:name="com.google.firebase.components:io.flutter.plugins.firebase.cloudfirestore.FlutterFirebaseAppRegistrar"
+83-->[:cloud_firestore] /Users/liam/FlutterProjects/TRACE_RELATED/trace/build/cloud_firestore/intermediates/library_manifest/debug/AndroidManifest.xml:10:17-133
+84                android:value="com.google.firebase.components.ComponentRegistrar" />
+84-->[:cloud_firestore] /Users/liam/FlutterProjects/TRACE_RELATED/trace/build/cloud_firestore/intermediates/library_manifest/debug/AndroidManifest.xml:11:17-82
+85            <meta-data
+85-->[:firebase_core] /Users/liam/FlutterProjects/TRACE_RELATED/trace/build/firebase_core/intermediates/library_manifest/debug/AndroidManifest.xml:9:13-11:85
+86                android:name="com.google.firebase.components:io.flutter.plugins.firebase.core.FlutterFirebaseAppRegistrar"
+86-->[:firebase_core] /Users/liam/FlutterProjects/TRACE_RELATED/trace/build/firebase_core/intermediates/library_manifest/debug/AndroidManifest.xml:10:17-123
+87                android:value="com.google.firebase.components.ComponentRegistrar" />
+87-->[:firebase_core] /Users/liam/FlutterProjects/TRACE_RELATED/trace/build/firebase_core/intermediates/library_manifest/debug/AndroidManifest.xml:11:17-82
+88            <meta-data
+88-->[com.google.firebase:firebase-auth:19.2.0] /Users/liam/.gradle/caches/transforms-2/files-2.1/a83bb62cb43b672cf00b874e0ee6110c/firebase-auth-19.2.0/AndroidManifest.xml:36:13-38:85
+89                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
+89-->[com.google.firebase:firebase-auth:19.2.0] /Users/liam/.gradle/caches/transforms-2/files-2.1/a83bb62cb43b672cf00b874e0ee6110c/firebase-auth-19.2.0/AndroidManifest.xml:37:17-109
+90                android:value="com.google.firebase.components.ComponentRegistrar" />
+90-->[com.google.firebase:firebase-auth:19.2.0] /Users/liam/.gradle/caches/transforms-2/files-2.1/a83bb62cb43b672cf00b874e0ee6110c/firebase-auth-19.2.0/AndroidManifest.xml:38:17-82
+91            <meta-data
+91-->[com.google.firebase:firebase-firestore:21.3.0] /Users/liam/.gradle/caches/transforms-2/files-2.1/f95834b738a264718a83a5d1adc44c6a/jetified-firebase-firestore-21.3.0/AndroidManifest.xml:20:13-22:85
+92                android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"
+92-->[com.google.firebase:firebase-firestore:21.3.0] /Users/liam/.gradle/caches/transforms-2/files-2.1/f95834b738a264718a83a5d1adc44c6a/jetified-firebase-firestore-21.3.0/AndroidManifest.xml:21:17-111
+93                android:value="com.google.firebase.components.ComponentRegistrar" />
+93-->[com.google.firebase:firebase-firestore:21.3.0] /Users/liam/.gradle/caches/transforms-2/files-2.1/f95834b738a264718a83a5d1adc44c6a/jetified-firebase-firestore-21.3.0/AndroidManifest.xml:22:17-82
+94        </service>
+95
+96        <activity
+96-->[:url_launcher] /Users/liam/FlutterProjects/TRACE_RELATED/trace/build/url_launcher/intermediates/library_manifest/debug/AndroidManifest.xml:8:9-11:74
+97            android:name="io.flutter.plugins.urllauncher.WebViewActivity"
+97-->[:url_launcher] /Users/liam/FlutterProjects/TRACE_RELATED/trace/build/url_launcher/intermediates/library_manifest/debug/AndroidManifest.xml:9:13-74
+98            android:exported="false"
+98-->[:url_launcher] /Users/liam/FlutterProjects/TRACE_RELATED/trace/build/url_launcher/intermediates/library_manifest/debug/AndroidManifest.xml:10:13-37
+99            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+99-->[:url_launcher] /Users/liam/FlutterProjects/TRACE_RELATED/trace/build/url_launcher/intermediates/library_manifest/debug/AndroidManifest.xml:11:13-71
 100
 101        <provider
-101-->[:share_extend] /Users/liam/FlutterProjects/trace/build/share_extend/intermediates/library_manifest/debug/AndroidManifest.xml:8:9-13:20
+101-->[:share_extend] /Users/liam/FlutterProjects/TRACE_RELATED/trace/build/share_extend/intermediates/library_manifest/debug/AndroidManifest.xml:8:9-13:20
 102            android:name="com.zt.shareextend.ShareExtendProvider"
-102-->[:share_extend] /Users/liam/FlutterProjects/trace/build/share_extend/intermediates/library_manifest/debug/AndroidManifest.xml:9:13-66
+102-->[:share_extend] /Users/liam/FlutterProjects/TRACE_RELATED/trace/build/share_extend/intermediates/library_manifest/debug/AndroidManifest.xml:9:13-66
 103            android:authorities="com.liamedwardsnz.trace.shareextend.fileprovider"
-103-->[:share_extend] /Users/liam/FlutterProjects/trace/build/share_extend/intermediates/library_manifest/debug/AndroidManifest.xml:10:13-76
+103-->[:share_extend] /Users/liam/FlutterProjects/TRACE_RELATED/trace/build/share_extend/intermediates/library_manifest/debug/AndroidManifest.xml:10:13-76
 104            android:exported="false"
-104-->[:share_extend] /Users/liam/FlutterProjects/trace/build/share_extend/intermediates/library_manifest/debug/AndroidManifest.xml:11:13-37
+104-->[:share_extend] /Users/liam/FlutterProjects/TRACE_RELATED/trace/build/share_extend/intermediates/library_manifest/debug/AndroidManifest.xml:11:13-37
 105            android:grantUriPermissions="true" >
-105-->[:share_extend] /Users/liam/FlutterProjects/trace/build/share_extend/intermediates/library_manifest/debug/AndroidManifest.xml:12:13-47
+105-->[:share_extend] /Users/liam/FlutterProjects/TRACE_RELATED/trace/build/share_extend/intermediates/library_manifest/debug/AndroidManifest.xml:12:13-47
 106        </provider>
 107
 108        <activity
@@ -183,15 +183,15 @@
 114-->[com.google.firebase:firebase-auth:19.2.0] /Users/liam/.gradle/caches/transforms-2/files-2.1/a83bb62cb43b672cf00b874e0ee6110c/firebase-auth-19.2.0/AndroidManifest.xml:30:13-72
 115
 116        <provider
-116-->[com.google.firebase:firebase-common:19.3.0] /Users/liam/.gradle/caches/transforms-2/files-2.1/ae58aa27d29b30f7dfa3c7ad61b046e7/jetified-firebase-common-19.3.0/AndroidManifest.xml:26:9-30:39
+116-->[com.google.firebase:firebase-common:19.3.0] /Users/liam/.gradle/caches/transforms-2/files-2.1/74c3dc8d4b970ee3063d023e0dc29eb3/jetified-firebase-common-19.3.0/AndroidManifest.xml:26:9-30:39
 117            android:name="com.google.firebase.provider.FirebaseInitProvider"
-117-->[com.google.firebase:firebase-common:19.3.0] /Users/liam/.gradle/caches/transforms-2/files-2.1/ae58aa27d29b30f7dfa3c7ad61b046e7/jetified-firebase-common-19.3.0/AndroidManifest.xml:27:13-77
+117-->[com.google.firebase:firebase-common:19.3.0] /Users/liam/.gradle/caches/transforms-2/files-2.1/74c3dc8d4b970ee3063d023e0dc29eb3/jetified-firebase-common-19.3.0/AndroidManifest.xml:27:13-77
 118            android:authorities="com.liamedwardsnz.trace.firebaseinitprovider"
-118-->[com.google.firebase:firebase-common:19.3.0] /Users/liam/.gradle/caches/transforms-2/files-2.1/ae58aa27d29b30f7dfa3c7ad61b046e7/jetified-firebase-common-19.3.0/AndroidManifest.xml:28:13-72
+118-->[com.google.firebase:firebase-common:19.3.0] /Users/liam/.gradle/caches/transforms-2/files-2.1/74c3dc8d4b970ee3063d023e0dc29eb3/jetified-firebase-common-19.3.0/AndroidManifest.xml:28:13-72
 119            android:exported="false"
-119-->[com.google.firebase:firebase-common:19.3.0] /Users/liam/.gradle/caches/transforms-2/files-2.1/ae58aa27d29b30f7dfa3c7ad61b046e7/jetified-firebase-common-19.3.0/AndroidManifest.xml:29:13-37
+119-->[com.google.firebase:firebase-common:19.3.0] /Users/liam/.gradle/caches/transforms-2/files-2.1/74c3dc8d4b970ee3063d023e0dc29eb3/jetified-firebase-common-19.3.0/AndroidManifest.xml:29:13-37
 120            android:initOrder="100" />
-120-->[com.google.firebase:firebase-common:19.3.0] /Users/liam/.gradle/caches/transforms-2/files-2.1/ae58aa27d29b30f7dfa3c7ad61b046e7/jetified-firebase-common-19.3.0/AndroidManifest.xml:30:13-36
+120-->[com.google.firebase:firebase-common:19.3.0] /Users/liam/.gradle/caches/transforms-2/files-2.1/74c3dc8d4b970ee3063d023e0dc29eb3/jetified-firebase-common-19.3.0/AndroidManifest.xml:30:13-36
 121
 122        <activity
 122-->[com.google.android.gms:play-services-base:17.1.0] /Users/liam/.gradle/caches/transforms-2/files-2.1/6eb14f512292913515d869914807ad40/play-services-base-17.1.0/AndroidManifest.xml:23:9-26:75
@@ -203,11 +203,11 @@
 125-->[com.google.android.gms:play-services-base:17.1.0] /Users/liam/.gradle/caches/transforms-2/files-2.1/6eb14f512292913515d869914807ad40/play-services-base-17.1.0/AndroidManifest.xml:26:13-72
 126
 127        <meta-data
-127-->[com.google.android.gms:play-services-basement:17.0.0] /Users/liam/.gradle/caches/transforms-2/files-2.1/5b9576ecad7d2acebc256e48b6a0899b/jetified-play-services-basement-17.0.0/AndroidManifest.xml:23:9-25:69
+127-->[com.google.android.gms:play-services-basement:17.0.0] /Users/liam/.gradle/caches/transforms-2/files-2.1/694ac055b0cc1fbe221db1ad5f364606/jetified-play-services-basement-17.0.0/AndroidManifest.xml:23:9-25:69
 128            android:name="com.google.android.gms.version"
-128-->[com.google.android.gms:play-services-basement:17.0.0] /Users/liam/.gradle/caches/transforms-2/files-2.1/5b9576ecad7d2acebc256e48b6a0899b/jetified-play-services-basement-17.0.0/AndroidManifest.xml:24:13-58
+128-->[com.google.android.gms:play-services-basement:17.0.0] /Users/liam/.gradle/caches/transforms-2/files-2.1/694ac055b0cc1fbe221db1ad5f364606/jetified-play-services-basement-17.0.0/AndroidManifest.xml:24:13-58
 129            android:value="@integer/google_play_services_version" />
-129-->[com.google.android.gms:play-services-basement:17.0.0] /Users/liam/.gradle/caches/transforms-2/files-2.1/5b9576ecad7d2acebc256e48b6a0899b/jetified-play-services-basement-17.0.0/AndroidManifest.xml:25:13-66
+129-->[com.google.android.gms:play-services-basement:17.0.0] /Users/liam/.gradle/caches/transforms-2/files-2.1/694ac055b0cc1fbe221db1ad5f364606/jetified-play-services-basement-17.0.0/AndroidManifest.xml:25:13-66
 130    </application>
 131
 132</manifest>

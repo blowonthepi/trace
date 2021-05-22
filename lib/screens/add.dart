@@ -6,7 +6,7 @@ import 'package:intl/intl.dart';
 import 'package:smart_select/smart_select.dart';
 
 import 'add_person.dart';
-import 'encrypt-values.dart';
+import '../tools/encrypt-values.dart';
 
 class Add extends StatefulWidget {
   Add({this.uid});

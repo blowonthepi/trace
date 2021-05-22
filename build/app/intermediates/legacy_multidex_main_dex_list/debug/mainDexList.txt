@@ -190,8 +190,9 @@ com/google/j2objc/annotations/RetainedWith.class
 com/google/j2objc/annotations/Weak.class
 com/google/j2objc/annotations/WeakOuter.class
 com/google/protobuf/ExperimentalApi.class
+io/flutter/FlutterInjector.class
 io/flutter/app/FlutterApplication.class
-io/flutter/view/FlutterMain.class
+io/flutter/embedding/engine/loader/FlutterLoader.class
 io/grpc/CallOptions.class
 io/grpc/EquivalentAddressGroup$Attr.class
 io/grpc/ExperimentalApi.class

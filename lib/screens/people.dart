@@ -1,4 +1,4 @@
-import 'package:Trace/encrypt-values.dart';
+import 'package:Trace/tools/encrypt-values.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:encrypt/encrypt.dart';
 import 'package:firebase_auth/firebase_auth.dart';

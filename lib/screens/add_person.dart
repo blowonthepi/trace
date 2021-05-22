@@ -3,7 +3,7 @@ import 'package:encrypt/encrypt.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
-import 'encrypt-values.dart';
+import '../tools/encrypt-values.dart';
 
 class AddPerson extends StatefulWidget {
   @override

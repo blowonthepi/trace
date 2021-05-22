@@ -28,7 +28,7 @@ class ExportData {
   }
 
   void getData(String uid) {
-    List<List<dynamic>> rows = List<List<dynamic>>();
+    List<List<dynamic>> rows = [];
     rows.add([
       "Name",
       "Date & Time (dd/mm/yyyy)",
@@ -36,8 +36,8 @@ class ExportData {
     ]);
     Firestore.instance.collection("trace-"+uid).orderBy("date", descending: true).snapshots().listen((snapshot) {
       snapshot.documents.forEach((element) {
-        List<dynamic> row = List<dynamic>();
-        List names = List();
+        List<dynamic> row = [];
+        List names = [];
         for(String n in element.data['names']) {
           names.add(encrypter.decrypt64(n, iv: EncVals().iv));
         }
