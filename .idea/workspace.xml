@@ -22,26 +22,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f9a24fea-7df3-4bb3-be79-58656a01e0fd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/lib/screens/home.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/screens/home/entry_card.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/screens/settings.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/tools/page_data.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.packages" beforeDir="false" afterPath="$PROJECT_DIR$/.packages" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/add.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/add.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/add_person.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/add_person.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/encrypt-values.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/tools/encrypt-values.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/export.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/tools/export.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/generated_plugin_registrant.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/generated_plugin_registrant.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/people.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/people.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
-    </list>
+    <list default="true" id="f9a24fea-7df3-4bb3-be79-58656a01e0fd" name="Default Changelist" comment="Added some comments, and tidied up some code" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -121,7 +102,14 @@
       <option name="project" value="LOCAL" />
       <updated>1595157084107</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Added some comments, and tidied up some code">
+      <created>1621682692294</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1621682692294</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -140,7 +128,8 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="First code commit" />
     <MESSAGE value="Update commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update commit" />
+    <MESSAGE value="Added some comments, and tidied up some code" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added some comments, and tidied up some code" />
   </component>
   <component name="WindowStateProjectService">
     <state x="100" y="125" width="995" height="825" key="AVDManager" timestamp="1621682365656">
@@ -163,6 +152,10 @@
       <screen x="0" y="25" width="1680" height="1025" />
     </state>
     <state width="1153" height="277" key="GridCell.Tab.0.right/0.25.1680.1025@0.25.1680.1025" timestamp="1621682274827" />
+    <state x="197" y="274" key="Vcs.Push.Dialog.v2" timestamp="1621682643488">
+      <screen x="0" y="25" width="1680" height="1025" />
+    </state>
+    <state x="197" y="274" key="Vcs.Push.Dialog.v2/0.25.1680.1025@0.25.1680.1025" timestamp="1621682643488" />
     <state x="262" y="252" width="670" height="676" key="search.everywhere.popup" timestamp="1621682091059">
       <screen x="0" y="25" width="1680" height="1025" />
     </state>

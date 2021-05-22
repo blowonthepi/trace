@@ -1,11 +1,6 @@
 import 'package:Trace/screens/settings.dart';
-import 'package:Trace/tools/encrypt-values.dart';
 import 'package:Trace/tools/export.dart';
 import 'package:Trace/tools/page_data.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:Trace/screens/add.dart';
-import 'package:Trace/screens/add_person.dart';
-import 'package:Trace/screens/people.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -68,7 +63,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
   // start at 0 for home
   int _currentIndex = 0;
-  bool isUserAuthenticated = false;
 
   @override
   void initState() {
@@ -92,14 +86,11 @@ class _MyHomePageState extends State<MyHomePage> {
     try {
       user = await _auth.currentUser();
       if (user.uid != null) {
-        isUserAuthenticated = true;
       } else {
         Navigator.of(context).pushReplacement(new MaterialPageRoute(builder: (context) => new Auth()));
-        isUserAuthenticated = false;
       }
     } catch (e) {
       Navigator.of(context).pushReplacement(new MaterialPageRoute(builder: (context) => new Auth()));
-      isUserAuthenticated = false;
     }
     return true;
   }
