@@ -8,9 +8,7 @@ This repo is for my personal CV and is no longer being maintained.
 It has most recently been updated to reflect my newest workflow.
 
 ## Screenshots
-
-<img src="https://github.com/blowonthepi/trace/blob/master/slice2.png" width="90">
-<img src="https://github.com/blowonthepi/trace/blob/master/slice3.png" width="90">
-<img src="https://github.com/blowonthepi/trace/blob/master/slice4.png" width="90">
-<img src="https://github.com/blowonthepi/trace/blob/master/slice5.png" width="90">
-
+<img src="https://github.com/blowonthepi/trace/blob/master/slice2.png" width="175">&nbsp;
+<img src="https://github.com/blowonthepi/trace/blob/master/slice3.png" width="175">
+<img src="https://github.com/blowonthepi/trace/blob/master/slice4.png" width="175">
+<img src="https://github.com/blowonthepi/trace/blob/master/slice5.png" width="175">
