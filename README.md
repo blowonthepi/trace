@@ -1,4 +1,7 @@
 # Trace, manual contact tracing
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-no-red.svg)](https://bitbucket.org/lbesson/ansi-colors)
+[![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
+
 
 Trace is for NZ/AU residents to manually record their contact during the COVID-19 pandemic.
 
